@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/E-commerce-product-design/static/css/main.0bf23aa8.css",
-    "main.js": "/E-commerce-product-design/static/js/main.93cb9446.js",
+    "main.css": "/E-commerce-product-design/static/css/main.1b5aaf16.css",
+    "main.js": "/E-commerce-product-design/static/js/main.984286a3.js",
     "static/js/453.8f537da6.chunk.js": "/E-commerce-product-design/static/js/453.8f537da6.chunk.js",
     "static/media/image-product-2.jpg": "/E-commerce-product-design/static/media/image-product-2.c8bb0aaccecdebb16596.jpg",
     "static/media/image-product-1.jpg": "/E-commerce-product-design/static/media/image-product-1.520cc50bd13955f55cb2.jpg",
     "static/media/image-product-3.jpg": "/E-commerce-product-design/static/media/image-product-3.af5c71ba9ffcc0b8b54d.jpg",
     "static/media/image-product-4.jpg": "/E-commerce-product-design/static/media/image-product-4.9962862ef3eff6d65e5b.jpg",
-    "static/media/logo.svg": "/E-commerce-product-design/static/media/logo.4fe9c1e86cf9bf600f0c.svg",
+    "static/media/logo.svg": "/E-commerce-product-design/static/media/logo.4fe9c1e86cf9bf600f0c239f6a6e5317.svg",
     "index.html": "/E-commerce-product-design/index.html",
-    "static/media/icon-delete.svg": "/E-commerce-product-design/static/media/icon-delete.1fd1f1f7d9f8ce5557b4.svg",
-    "static/media/icon-cart.svg": "/E-commerce-product-design/static/media/icon-cart.539ec608f50e707c94d5.svg",
-    "static/media/icon-cart_2.svg": "/E-commerce-product-design/static/media/icon-cart_2.ec5dc69d2bdaaca8f47c.svg",
-    "static/media/icon-plus.svg": "/E-commerce-product-design/static/media/icon-plus.b297868c5f938612f4f0.svg",
-    "static/media/icon-minus.svg": "/E-commerce-product-design/static/media/icon-minus.f5073aa8273785ecf6b7.svg",
-    "static/media/icon-close.svg": "/E-commerce-product-design/static/media/icon-close.c390448669f3a8a4c4b2.svg",
-    "static/media/icon-previous.svg": "/E-commerce-product-design/static/media/icon-previous.80616402c611cc0a6651.svg",
-    "static/media/icon-next.svg": "/E-commerce-product-design/static/media/icon-next.9621183a551a9985b4bd.svg",
-    "main.0bf23aa8.css.map": "/E-commerce-product-design/static/css/main.0bf23aa8.css.map",
-    "main.93cb9446.js.map": "/E-commerce-product-design/static/js/main.93cb9446.js.map",
+    "static/media/icon-delete.svg": "/E-commerce-product-design/static/media/icon-delete.1fd1f1f7d9f8ce5557b44ca3470a18b8.svg",
+    "static/media/icon-cart.svg": "/E-commerce-product-design/static/media/icon-cart.539ec608f50e707c94d583ec11acf99d.svg",
+    "static/media/icon-cart_2.svg": "/E-commerce-product-design/static/media/icon-cart_2.ec5dc69d2bdaaca8f47c7436ecb1fb4e.svg",
+    "static/media/icon-plus.svg": "/E-commerce-product-design/static/media/icon-plus.b297868c5f938612f4f099f9f9d73aea.svg",
+    "static/media/icon-minus.svg": "/E-commerce-product-design/static/media/icon-minus.f5073aa8273785ecf6b7811630782736.svg",
+    "static/media/icon-close.svg": "/E-commerce-product-design/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
+    "static/media/icon-menu.svg": "/E-commerce-product-design/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
+    "static/media/icon-previous.svg": "/E-commerce-product-design/static/media/icon-previous.80616402c611cc0a6651d0b751da8a9b.svg",
+    "static/media/icon-next.svg": "/E-commerce-product-design/static/media/icon-next.9621183a551a9985b4bd7536c9a69c66.svg",
+    "main.1b5aaf16.css.map": "/E-commerce-product-design/static/css/main.1b5aaf16.css.map",
+    "main.984286a3.js.map": "/E-commerce-product-design/static/js/main.984286a3.js.map",
     "453.8f537da6.chunk.js.map": "/E-commerce-product-design/static/js/453.8f537da6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bf23aa8.css",
-    "static/js/main.93cb9446.js"
+    "static/css/main.1b5aaf16.css",
+    "static/js/main.984286a3.js"
   ]
 }
