@@ -4,12 +4,28 @@ import im1 from './images/image-product-1.jpg';
 import im2 from './images/image-product-2.jpg';
 import im3 from './images/image-product-3.jpg';
 import im4 from './images/image-product-4.jpg';
+import menu from './images/icon-menu.svg';
+import logo from './images/logo.svg';
+import cart from './images/icon-cart.svg';
+import cart2 from './images/icon-cart_2.svg';
+import pfp from './images/image-avatar.png';
+import imt1 from './images/image-product-1-thumbnail.jpg';
+import imt2 from './images/image-product-2-thumbnail.jpg';
+import imt3 from './images/image-product-3-thumbnail.jpg';
+import imt4 from './images/image-product-4-thumbnail.jpg';
+import ls from './images/icon-previous.svg';
+import rs from './images/icon-next.svg';
+import plus from './images/icon-plus.svg';
+import minus from './images/icon-minus.svg';
+import close from './images/icon-close.svg';
+import bin from './images/icon-delete.svg';
 
 function App() {
   
   const [count,setCount] = useState(0);
   const [overlay,setOverlay] = useState(false);
   const [visible,setVisible] = useState(false);
+  const [menuVisible,setmenuVisible] = useState(false);
   const [product,showProduct] = useState(false);
   const [image,setImage] = useState(im1)
   const [highlight,setHighlight] = useState([true,false,false,false])
@@ -52,6 +68,9 @@ function App() {
   const expandCart = () =>{
     setVisible(!visible)
   }
+  const changeMenu = () =>{
+    setmenuVisible(!menuVisible)
+  }
   
   const changeSlide = (index)=>{
     setSlide(index);
@@ -65,84 +84,96 @@ function App() {
     setHighlight(newHighlight);
 }
   return (
-    <div className="App">
-      <div className='navbar'>
-        <div className='menu-left'>
-          <div className='logo'></div>
-          <div className='menu'>
-            <div>Collections</div>
-            <div>Men</div>
-            <div>Women</div>
-            <div>About</div>
-            <div>Contact</div>
+    <div className="App font-type">
+      <div className='navbar row-space-btw'>
+        <div className='left-nav row-space-btw'>
+          <button className='initial menu-logo center' onClick={changeMenu}><img src={menu} className='point'></img></button>
+          <img src={logo} className='logo point'></img>
+          <div className='menu-content center'>
+              <div>Collections</div>
+              <div>Men</div>
+              <div>Women</div>
+              <div>About</div>
+              <div>Contact</div>
           </div>
-        </div>
-        <div className='user'>
-         <button className='cart' onClick={expandCart}></button>
-         <div className='pfp'></div>
-        </div>
-      </div>
-      <div className={`expanded-cart ${visible?'show': ''}`}>
-        <div className='cart-title'>Cart</div>
-        <div className='cart-content'>
-          <div className={`empty ${product?'':'visible' }`}>Your cart is empty</div>
-          <div className={`added-prod ${product?'visible':'' }`}>
-            <div className='prod-img'></div>
-            <div className='prod-details'>
-              <div>Fall Limited Edition Sneakers</div>
-              <div>$125.00X{count} ${125.00*count}</div>
+          <div className={`${menuVisible?'overlay':''}`}>
+            <div className={`nav-content ${menuVisible?'show ':'hide'}`}>
+              <button className='initial' onClick={changeMenu} style={{paddingBottom:'2vh'}}><img src={close}></img></button>
+              <div>Collections</div>
+              <div>Men</div>
+              <div>Women</div>
+              <div>About</div>
+              <div>Contact</div>
             </div>
-            <div className='remove-prod' onClick={removeItem}></div>
           </div>
-          <button className={`check-btn ${product?'visible2':'' }`} onClick={expandCart}>Checkout</button>
+          
+        </div>
+        <div className='right-nav row-space-btw'>
+        <div>
+            <button className='initial' onClick={expandCart}><img src={cart2} style={{height: '3vh'}} className='point'></img></button>
+            <div className={`prod-notify ${product?'':'hide'}`}>{count}</div>
+            <div className={`expanded-cart-section ${visible?'show':'hide'}`}>
+              <div className='cart-title'>Cart</div>
+              <div className='expanded-content'>
+              <div className={`empty-msg ${product?'hide':''}`}>Cart is empty</div>
+                <div className={`prod-container row-space-btw ${product?'':'hide'}`}>
+                  <img src={imt1} className='added-prod-img'></img>
+                  <div className='cart-product'>
+                    <div>Fall Limited Edition Sneakers</div>
+                    <div>$125.00 x {count} <b style={{color:'hsl(220, 13%, 13%)'}}>${125.00*count}</b></div>
+                  </div>
+                  <button className='initial' onClick={removeItem}><img src={bin} className='delete-img'></img></button>
+                </div>
+                <button className={`initial font-type check-btn ${product?'':'hide'}`} onClick={expandCart}>Checkout</button>
+              </div>
+            </div>
+          </div>
+          <img src={pfp} style={{height: '5vh'}}></img>
         </div>
       </div>
-      
-      <div className='content'>
+      <div className='product-section'>
         <div className='img-section'>
-          <button className='main-img' style={{backgroundImage: `url(${image})`}} onClick={changeOverlay} ></button>
-          <div className='sub-img'>
-            <button className={`img-1 img-p ${highlight[0]?'highlight':''}`} onClick={() => changeImage(0)}></button>
-            <button className={`img-2 img-p ${highlight[1]?'highlight':''}`} onClick={() => changeImage(1)}></button>
-            <button className={`img-3 img-p ${highlight[2]?'highlight':''}`} onClick={() => changeImage(2)}></button>
-            <button className={`img-4 img-p ${highlight[3]?'highlight':''}`} onClick={() => changeImage(3)}></button>
-          </div>
-        </div>
-        <div className='product'>
-          <div className='product-title'>SNEAKER COMPANY</div>
-          <div className='product-type'>Fall Limited Edition Sneakers</div>
-          <div className='product-desc'>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-          durable rubber outer sole, they'll withstand everything the weather can offer.</div>
-          <div className='price'>
-            <div className='cost'>$125.00</div>
-            <div className='discount'>50%</div>
-          </div>
-          <div className='act-price'><strike>$250.00</strike></div>
-          <div className='cart-section'>
-            <div className='counter'>
-              <button className='minus' onClick={decrement}></button>
-              <div className='count'>{count}</div>
-              <button className='plus' onClick={increment}></button>
+          <div className='main-img-section'>
+            <img src={images[slide]} className='main-img'></img>
+            <div className='slider row-space-btw'>
+              <button className='slide-btn center point prev' onClick={prevImage}><img src={ls} style={{width: '1.5vh', height:'2vh'}} ></img></button>
+              <button className='slide-btn center point next' onClick={nextImage}><img src={rs} style={{width: '1.5vh',height:'2vh'}}></img></button>
             </div>
-            <button className='add-btn' onClick={addCart}><div className='cart-img'></div>Add to cart</button>
+          </div>
+          <button className='initial' onClick={changeOverlay}><img src={image} className='product-img'></img></button>
+          <div className='arr-imgs'>
+            <img src={imt1} className={`${highlight[0]?'highlight':''}`} onClick={() => changeImage(0)}></img>
+            <img src={imt2} className={`${highlight[1]?'highlight':''}`} onClick={() => changeImage(1)}></img>
+            <img src={imt3} className={`${highlight[2]?'highlight':''}`} onClick={() => changeImage(2)}></img>
+            <img src={imt4} className={`${highlight[3]?'highlight':''}`} onClick={() => changeImage(3)}></img>
           </div>
         </div>
-      </div>
-      <div className={`overlay ${overlay? 'visible' :''}`}>
-        <div className='exit-container'>
-          <button className='exit' onClick={changeOverlay}></button>
-        </div>
-        <img className='over-img' src={images[slide]}></img>
-        <div className='slider'>
-          <button className='slide' onClick={prevImage}><div className='left-slide'></div></button>
-          <button className='slide' onClick={nextImage}><div className='right-slide'></div></button>
-        </div>
-        <div className='sub-img'>
-            <button className={`img-1 img-p `} onClick={() => changeSlide(0)}></button>
-            <button className={`img-2 img-p `} onClick={() => changeSlide(1)}></button>
-            <button className={`img-3 img-p `} onClick={() => changeSlide(2)}></button>
-            <button className={`img-4 img-p `} onClick={() => changeSlide(3)}></button>
+        <div className='product-desc center'>
+          <div className='details'>
+            <div className='brand'>SNEAKER COMPANY</div>
+            <div className='shoe-type'>Fall Limited Edition Sneakers</div>
+            <div className='shoe-desc'>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they'll withstand everything the weather can offer.</div>
           </div>
+          <div className='price-details row-space-btw'>
+            <div className='current-price row-space-btw'>
+              <div className='price'>$125.00</div>
+              <div className='discount center'>50%</div>
+            </div>
+            <div className='MRP'>$250.00</div>
+          </div>
+          <div className='add-to-cart'>
+            <div className='counter row-space-btw'>
+              <button style={{all:'initial'}} onClick={decrement}><img src={minus} className='point'></img></button>
+              <div>{count}</div>
+              <button style={{all:'initial'}} onClick={increment}><img src={plus} className='point'></img></button>
+            </div>
+            <button className='btn-section initial font-type center' onClick={addCart} style={{fontWeight:'700'}}>
+              <img src={cart2}></img>
+              <div>Add to cart</div>
+            </button>
+          </div>
+        </div> 
       </div>
     </div>
   );
